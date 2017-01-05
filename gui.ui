@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1047</width>
-    <height>595</height>
+    <width>1294</width>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>PROG CW</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,2">
@@ -698,7 +698,7 @@
      <widget class="QGraphicsView" name="graphicsView">
       <property name="minimumSize">
        <size>
-        <width>300</width>
+        <width>350</width>
         <height>0</height>
        </size>
       </property>
@@ -711,7 +711,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1047</width>
+     <width>1294</width>
      <height>21</height>
     </rect>
    </property>

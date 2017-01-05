@@ -1,16 +1,17 @@
-
+import os
 import sys
 
-from PyQt5.QtWidgets import QApplication, QMessageBox
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication\
 
 from gui import MainFrame
 
-
-
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    filename = 'ico.ico'
+    if hasattr(sys, '_MEIPASS'):
+        filename = os.path.join(sys._MEIPASS, filename)
+    app.setWindowIcon(QIcon(filename))
     ex = MainFrame()
 
     sys._excepthook = sys.excepthook

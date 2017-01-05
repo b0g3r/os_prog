@@ -4,6 +4,7 @@ import os
 from threading import Thread
 
 import matplotlib.pyplot as plt
+import sys
 from PyQt5 import uic
 from PyQt5.QtCore import pyqtSignal, Qt
 from PyQt5.QtCore import pyqtSlot
@@ -52,7 +53,10 @@ class MainFrame(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        uic.loadUi(r'gui.ui', self)
+        filename = 'gui.ui'
+        if hasattr(sys, '_MEIPASS'):
+            filename = os.path.join(sys._MEIPASS, filename)
+        uic.loadUi(filename, self)
         self.init_ui()
 
     def init_ui(self):
@@ -84,7 +88,7 @@ class MainFrame(QMainWindow):
         about = QMessageBox()
         about.setWindowTitle("О программе")
         about.setText('Программа, разработанная в рамках курса "Теория и технология программирования", Дмитрий Богер'
-                      '\nИсходный код: github.com/b0g3r/os_prog')
+                      '\nИсходный код: github.com/b0g3r/prog_cw')
         about.exec_()
 
     def save_data(self):
@@ -126,7 +130,6 @@ class MainFrame(QMainWindow):
         json.dump(data,
                   open(QFileDialog().getSaveFileName(self, 'Save file', os.getcwd(), "process files (*.json)")[0], 'w'),
                   indent=4)
-
 
     def load_data(self):
         fname = QFileDialog().getOpenFileName(self, 'Open file',
@@ -223,8 +226,6 @@ class MainFrame(QMainWindow):
         fig.patch.set_visible(False)
         bytes_io = io.BytesIO()
         plt.savefig(bytes_io, format='png', bbox_inches='tight')
-        bytes_io.seek(0)
-        open('foo.png', 'wb').write(bytes_io.read())
         bytes_io.seek(0)
         return QPixmap().fromImage(QImage().fromData(bytes_io.read()))
 
