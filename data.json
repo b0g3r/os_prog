@@ -1,0 +1,34 @@
+{
+  "solute": {
+    "capacity": 298000,
+    "density": 2120,
+    "molar_mass": 56.1,
+    "solubility": 1179,
+    "boil_temp": 1327,
+    "melting_temp": 406
+  },
+  "machine": {
+    "pipe_height": 4,
+    "pipe_diameter": 0.05,
+    "height": 8
+  },
+  "solvent": {
+    "tough": 0.001,
+    "molar_mass": 18,
+    "capacity": 3000,
+    "boil_temp": 100,
+    "density": 1000
+  },
+  "solution": {
+    "start_consumption": 0.3,
+    "final_conc": 0.5,
+    "start_temp": 50,
+    "start_conc": 0.2,
+    "final_temp": 100
+  },
+  "steam": {
+    "start_temp": 180,
+    "consumption": 0.66,
+    "final_temp": 60
+  }
+}
